@@ -2,21 +2,27 @@ pipeline {
     agent any
 
     stages {
+        stage('Clone') {
+            steps {
+                git 'https://github.com/Katarhani/lab5.git'
+            }
+        }
+
         stage('Build') {
             steps {
-                echo 'Сборка проекта...'
+                echo 'Building...'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Запуск тестов...'
+                echo 'Running tests...'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Деплой приложения...'
+                echo 'Deploying...'
             }
         }
     }
